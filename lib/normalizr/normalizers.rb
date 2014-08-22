@@ -16,13 +16,16 @@ Normalizr.configure do
   end
 
   add :control_chars do |value|
-    value.gsub!(/[[:cntrl:]&&[^[:space:]]]/, '') if String === value
-    value
+    if String === value
+      value.gsub(/[[:cntrl:]&&[^[:space:]]]/, '')
+    else
+      value
+    end
   end
 
   add :phone do |value|
     if String === value
-      value.gsub!(/[^0-9]+/, '')
+      value = value.gsub(/[^0-9]+/, '')
       value unless value.empty?
     else
       value
@@ -31,25 +34,27 @@ Normalizr.configure do
 
   add :squish do |value|
     if String === value
-      value.strip!
-      value.gsub!(/\s+/, ' ')
+      value.strip.gsub(/\s+/, ' ')
+    else
+      value
     end
-    value
   end
 
   add :whitespace do |value|
     if String === value
-      value.gsub!(/[^\S\n]+/, ' ')
-      value.gsub!(/\s?\n\s?/, "\n")
-      value.strip!
+      value.gsub(/[^\S\n]+/, ' ').gsub(/\s?\n\s?/, "\n").strip
+    else
+      value
     end
-    value
   end
 
   [:capitalize, :downcase, :strip, :upcase].each do |name|
     add name do |value|
-      value.send(:"#{name}!") if String === value
-      value
+      if String === value
+        value.send(:"#{name}")
+      else
+        value
+      end
     end
   end
 end
