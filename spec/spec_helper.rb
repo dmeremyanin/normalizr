@@ -1,3 +1,4 @@
+require 'support/codeclimate'
 require 'pry'
 require 'rspec'
 require 'rspec/its'

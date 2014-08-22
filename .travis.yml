@@ -1,0 +1,9 @@
+language: ruby
+rvm:
+  - 2.0.0
+  - 2.1.0
+addons:
+  code_climate:
+    repo_token: 1cac54041089115a5bf218169b62c76c8b87a5896f5aa973f89637a8553c0376
+matrix:
+  fast_finish: true
