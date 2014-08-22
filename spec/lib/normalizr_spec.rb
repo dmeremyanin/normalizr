@@ -31,33 +31,9 @@ describe Normalizr do
     end
   end
 
-  describe '#do' do
+  describe '#normalize' do
     before  { configuration.default_normalizers = [:strip, :blank] }
-    subject { described_class.do(value, *normalizers) }
-
-    context 'normalizers is empty' do
-      let(:normalizers) { [] }
-      let(:value) { ' text ' }
-      it { should == 'text' }
-    end
-
-    context 'normalizers is not empty' do
-      let(:normalizers) { [truncate: { length: 8, omission: '...' }] }
-      let(:value) { 'Lorem ipsum dolor sit amet' }
-      it { should == 'Lorem...' }
-    end
-
-    context 'proc' do
-      let(:normalizers) { [proc { |v| v.first(5) }] }
-      let(:value) { 'Lorem ipsum dolor sit amet' }
-      it { should == 'Lorem' }
-    end
-  end
-
-
-  describe '#do' do
-    before  { configuration.default_normalizers = [:strip, :blank] }
-    subject { described_class.do(value, *normalizers) }
+    subject { described_class.normalize(value, *normalizers) }
 
     context 'normalizers is empty' do
       let(:normalizers) { [] }

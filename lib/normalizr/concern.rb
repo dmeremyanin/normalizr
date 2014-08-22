@@ -19,8 +19,8 @@ module Normalizr
         prepend Module.new {
           options.attributes.each do |method|
             define_method :"#{method}=" do |value|
-              value = Normalizr.do(value, *options.pre)
-              value = Normalizr.do(value, *options.post) if options.post.any?
+              value = Normalizr.normalize(value, *options.pre)
+              value = Normalizr.normalize(value, *options.post) if options.post.any?
               super(value)
             end
           end

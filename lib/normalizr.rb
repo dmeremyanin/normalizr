@@ -27,7 +27,7 @@ module Normalizr
     end
   end
 
-  def do(value, *normalizers)
+  def normalize(value, *normalizers)
     normalizers = configuration.default_normalizers if normalizers.empty?
     normalizers.each do |name|
       name, options = name.first if Hash === name

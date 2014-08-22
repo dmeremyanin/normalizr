@@ -96,9 +96,9 @@ end
 Normalize value outside class:
 
 ```ruby
-Normalizr.do(value)
-Normalizr.do(value, :strip, :blank)
-Normalizr.do(value, :strip, truncate: { length: 20 })
+Normalizr.normalize(value)
+Normalizr.normalize(value, :strip, :blank)
+Normalizr.normalize(value, :strip, truncate: { length: 20 })
 ```
 
 ### Built-in normalizers
