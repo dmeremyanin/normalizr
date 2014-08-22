@@ -50,7 +50,7 @@ Normalizr.configure do
 end
 ```
 
-Add a custom normalizer:
+Register custom normalizer:
 
 ```ruby
 Normalizr.configure do
@@ -93,7 +93,7 @@ class Currency
 end
 ```
 
-Normalize value outside class:
+Normalize values outside of class:
 
 ```ruby
 Normalizr.normalize(value)
