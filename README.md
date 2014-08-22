@@ -70,8 +70,11 @@ Normalizr.configure do
   end
 
   add :indent do |value, amount = 2|
-    value.indent!(amount) if String === value
-    value
+    if String === value
+      value.indent(amount)
+    end
+      value
+    end
   end
 end
 ```
