@@ -38,6 +38,5 @@ module Normalizr
 end
 
 require 'normalizr/normalizers'
-ActiveSupport.on_load(:active_record) do
-  ActiveRecord::Base.send(:include, Normalizr::Concern)
-end
+require 'normalizr/integrations/active_record' if defined?(ActiveRecord)
+require 'normalizr/integrations/rspec' if defined?(RSpec)

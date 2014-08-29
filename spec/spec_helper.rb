@@ -20,10 +20,6 @@ require 'support/models/publisher'
 require 'support/models/phone'
 require 'support/models/user'
 
-RSpec.configure do |config|
-  config.include Normalizr::RSpec::Matcher
-end
-
 Normalizr.configure do |config|
   default :strip, :special_normalizer, :blank
 
