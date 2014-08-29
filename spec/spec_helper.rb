@@ -17,6 +17,7 @@ require 'support/models/journal'
 require 'support/models/magazine'
 require 'support/models/person'
 require 'support/models/publisher'
+require 'support/models/phone'
 require 'support/models/user'
 
 RSpec.configure do |config|
