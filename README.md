@@ -130,6 +130,16 @@ Normalizr.normalize(value, :strip, :blank)
 Normalizr.normalize(value, :strip, truncate: { length: 20 })
 ```
 
+### RSpec matcher
+
+```ruby
+describe User do
+  it { should normalize(:name) }
+  it { should normalize(:phone).from('+1 (810) 555-0000').to('18105550000') }
+  it { should normalize(:email).from('ADDRESS@example.com').to('address@example.com') }
+end
+```
+
 ### Built-in normalizers
 
 - blank
