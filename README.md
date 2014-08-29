@@ -6,23 +6,22 @@ The [attribute_normalizer](https://github.com/mdeering/attribute_normalizer) rep
 
 ### Synopsis
 
-Attribute normalizer doesn't normalize overloaded writer methods correctly. Example:
+Attribute normalizer doesn't normalize overloaded methods correctly. Example:
 
 ```ruby
-class Currency
-  include Normalizr::Concern
+class Phone
+  include AttributeNormalizer
 
-  attr_accessor :value
-  normalize_attribute :value
+  attr_accessor :number
+  normalize_attribute :number
 
-  def value=(*)
-    # ...
-    super
+  def number=(value)
+    @number = value
   end
 end
 ```
 
-`value` will never be normalized as expected. Normalizr resolves this problem and doesn't generate any extra instance methods.
+`number` will never be normalized as expected. Normalizr resolves this problem and doesn't pollute target object namespace.
 
 Magic based on ruby's `prepend` feature, so it requires 2.0 or higher version.
 
@@ -90,10 +89,37 @@ class User < ActiveRecord::Base
   normalize_attribute :skype
 end
 
-class Currency
+user = User.new(first_name: '', last_name: '')
+user.email = "ADDRESS@example.com"
+
+user.first_name
+#=> nil
+user.last_name
+#=> nil
+user.email
+#=> "address@example.com"
+```
+
+```ruby
+class SMS
   include Normalizr::Concern
-  normalize :value
+
+  attr_accessor :phone, :message
+
+  normalize :phone, with: :phone
+  normalize :message
+
+  def initialize(phone, message)
+    self.phone   = phone
+    self.message = message
+  end
 end
+
+sms = SMS.new("+1 (810) 555-0000", "It works \n")
+sms.phone
+#=> "18105550000"
+sms.message
+#=> "It works"
 ```
 
 Normalize values outside of class:
