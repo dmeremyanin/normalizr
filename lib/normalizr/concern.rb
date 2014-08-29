@@ -2,14 +2,6 @@ module Normalizr
   module Concern
     def self.included(base)
       base.extend(ClassMethods)
-
-      base.instance_eval do
-        class << self
-          # attribute normalizer replacement
-          alias_method :normalize_attribute,  :normalize
-          alias_method :normalize_attributes, :normalize
-        end
-      end
     end
 
     module ClassMethods
@@ -26,6 +18,10 @@ module Normalizr
           end
         }
       end
+
+      # attribute normalizer compatibility
+      alias_method :normalize_attribute,  :normalize
+      alias_method :normalize_attributes, :normalize
     end
   end
 end
