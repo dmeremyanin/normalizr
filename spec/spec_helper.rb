@@ -1,4 +1,4 @@
-require 'support/codeclimate'
+require 'support/codeclimate' if defined?(CodeClimate)
 require 'pry'
 require 'rspec'
 require 'rspec/its'
