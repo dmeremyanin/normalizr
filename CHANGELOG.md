@@ -1,6 +1,10 @@
+### 0.0.4 / 2014-08-30
+
+* Automatically include RSpec matcher
+
 ### 0.0.3 / 2014-08-22
 
-* Fixed issue when some built-in normalizers modify passed-in parameters
+* Fix issue when some built-in normalizers modify passed-in parameters
 
 ### 0.0.2 / 2014-08-22
 
