@@ -39,4 +39,5 @@ end
 
 require 'normalizr/normalizers'
 require 'normalizr/integrations/active_record' if defined?(ActiveRecord)
+require 'normalizr/integrations/mongoid' if defined?(Mongoid)
 require 'normalizr/integrations/rspec' if defined?(RSpec)

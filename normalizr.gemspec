@@ -24,6 +24,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec',        '~> 3.0'
   spec.add_development_dependency 'rspec-its'
   spec.add_development_dependency 'fuubar'
+  spec.add_development_dependency 'mongoid',      '>= 3.0'
   spec.add_development_dependency 'activerecord', '>= 3.0'
   spec.add_development_dependency 'sqlite3'
 end
