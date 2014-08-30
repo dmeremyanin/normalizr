@@ -130,6 +130,13 @@ Normalizr.normalize(value, :strip, :blank)
 Normalizr.normalize(value, :strip, truncate: { length: 20 })
 ```
 
+### ORMs
+
+Normalizr automatically loads into:
+
+* ActiveRecord
+* Mongoid
+
 ### RSpec matcher
 
 ```ruby
