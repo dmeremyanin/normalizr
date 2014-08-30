@@ -1,3 +1,7 @@
+### 0.1.0 / 2014-08-30
+
+* Add Mongoid integration
+
 ### 0.0.4 / 2014-08-30
 
 * Automatically include RSpec matcher
