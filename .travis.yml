@@ -2,6 +2,7 @@ language: ruby
 rvm:
   - 2.0.0
   - 2.1.0
+  - 2.2.0
 gemfile:
   - gemfiles/activerecord-3.2.x.gemfile
   - gemfiles/activerecord-4.0.x.gemfile
