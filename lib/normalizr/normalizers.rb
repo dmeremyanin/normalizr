@@ -48,7 +48,9 @@ Normalizr.configure do
     end
   end
 
-  [:capitalize, :downcase, :strip, :upcase].each do |name|
+  [:capitalize, :downcase, :parameterize, :strip, :upcase].each do |name|
+    next unless String.method_defined?(name)
+
     add name do |value|
       if String === value
         value.send(:"#{name}")

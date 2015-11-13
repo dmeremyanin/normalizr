@@ -12,6 +12,7 @@ ActiveRecord::Schema.define do
     t.string :phone_number
     t.text   :biography
     t.text   :bibliography
+    t.string :slug
   end
 
   create_table :books, force: true do |t|
