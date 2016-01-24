@@ -1,3 +1,7 @@
+### 0.1.1 / 2015-11-12
+
+* New `parameterize` normalizer
+
 ### 0.1.0 / 2014-08-30
 
 * Add Mongoid integration
