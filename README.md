@@ -1,6 +1,9 @@
 ## Normalizr
 
-[![Travic CI](http://img.shields.io/travis/dimko/normalizr.svg)](https://travis-ci.org/dimko/normalizr) [![Code Climate](http://img.shields.io/codeclimate/github/dimko/normalizr.svg)](https://codeclimate.com/github/dimko/normalizr) [![Coverage](http://img.shields.io/codeclimate/coverage/github/dimko/normalizr.svg)](https://codeclimate.com/github/dimko/normalizr)
+[![Gem Version](https://badge.fury.io/rb/normalizr.svg)](https://badge.fury.io/rb/normalizr)
+[![Build Status](https://travis-ci.org/dimko/normalizr.svg?branch=master)](https://travis-ci.org/dimko/normalizr)
+[![Code Climate](https://codeclimate.com/github/dimko/normalizr/badges/gpa.svg)](https://codeclimate.com/github/dimko/normalizr)
+[![Test Coverage](https://codeclimate.com/github/dimko/normalizr/badges/coverage.svg)](https://codeclimate.com/github/dimko/normalizr/coverage)
 
 The [attribute_normalizer](https://github.com/mdeering/attribute_normalizer) replacement.
 
