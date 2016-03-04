@@ -4,6 +4,7 @@ rvm:
   - 2.0
   - 2.1
   - 2.2
+  - 2.3
 gemfile:
   - gemfiles/activerecord-3.2.x.gemfile
   - gemfiles/activerecord-4.0.x.gemfile
@@ -14,3 +15,6 @@ addons:
     repo_token: 1cac54041089115a5bf218169b62c76c8b87a5896f5aa973f89637a8553c0376
 matrix:
   fast_finish: true
+before_install:
+  - gem install bundler
+sudo: false
