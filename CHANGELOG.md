@@ -1,3 +1,7 @@
+### 0.2.0 / 2016-03-17
+
+* Introduce arrays normalization
+
 ### 0.1.1 / 2015-11-12
 
 * New `parameterize` normalizer

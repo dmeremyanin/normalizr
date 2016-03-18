@@ -90,9 +90,12 @@ class User < ActiveRecord::Base
 
   # supports `normalize_attribute` and `normalize_attributes` as well
   normalize_attribute :skype
+
+  # array normalization is supported too
+  normalize :skills
 end
 
-user = User.new(first_name: '', last_name: '')
+user = User.new(first_name: '', last_name: '', skills: [nil, '', ' ruby'])
 user.email = "ADDRESS@example.com"
 
 user.first_name
@@ -101,6 +104,8 @@ user.last_name
 #=> nil
 user.email
 #=> "address@example.com"
+user.skills
+#=> ["ruby"]
 ```
 
 ```ruby
