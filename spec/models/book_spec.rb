@@ -1,12 +1,15 @@
 require 'spec_helper'
 
 describe Book do
-  it { should normalize_attribute(:author).from(' Michael Deering ').to('Michael Deering') }
-  it { should normalize_attribute(:us_price).from('$3.50').to(3.50) }
-  it { should normalize_attribute(:cnd_price).from('$3,450.98').to(3450.98) }
-  it { should normalize_attribute(:summary).from('    Here is my summary that is a little to long  ').to('Here is m...') }
+  it { should normalize(:author).from(' Michael Deering ').to('Michael Deering') }
+  it { should normalize(:us_price).from('$3.50').to(3.50) }
+  it { should normalize(:cnd_price).from('$3,450.98').to(3450.98) }
+  it { should normalize(:summary).from('    Here is my summary that is a little to long  ').to('Here is m...') }
+  it { should normalize(:title).from('pick up chicks with magic tricks').to('Pick Up Chicks With Magic Tricks') }
 
-  it { should normalize_attribute(:title).from('pick up chicks with magic tricks').to('Pick Up Chicks With Magic Tricks') }
+  it { should normalize(:tags).from(['', nil, ' ', ' test']).to(['test']) }
+  it { should normalize(:tags).from([[''], [nil, ' test ']]).to([[], ['test']]) } # nested arrays
+  it { should normalize(:tags).from([]).to([]) }
 
   context 'normalization should not interfere with other hooks and aliases on the attribute assignment' do
     before do

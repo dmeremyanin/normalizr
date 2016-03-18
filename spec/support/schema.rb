@@ -22,6 +22,7 @@ ActiveRecord::Schema.define do
     t.decimal :us_price
     t.string  :summary
     t.string  :title
+    t.text    :tags
   end
 
   create_table :journals, force: true do |t|

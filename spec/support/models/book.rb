@@ -5,4 +5,7 @@ class Book < ActiveRecord::Base
   normalize_attributes :title do |value|
     String === value ? value.titleize.strip : value
   end
+
+  serialize :tags, Array
+  normalize :tags
 end

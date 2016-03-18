@@ -27,13 +27,23 @@ module Normalizr
     end
   end
 
-  def normalize(value, *normalizers)
+  def process(obj, name, options)
+    if Array === obj
+      obj.map { |item| process(item, name, options) }.tap do |ary|
+        ary.compact! if name == :blank
+      end
+    else
+      find(name).call(obj, options)
+    end
+  end
+
+  def normalize(obj, *normalizers)
     normalizers = configuration.default_normalizers if normalizers.empty?
     normalizers.each do |name|
       name, options = name.first if Hash === name
-      value = find(name).call(value, options)
+      obj = process(obj, name, options)
     end
-    value
+    obj
   end
 end
 
