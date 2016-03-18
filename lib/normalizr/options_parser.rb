@@ -8,11 +8,11 @@ module Normalizr
       @block = block
     end
 
-    def pre
+    def before
       options_at(:with, :before) { block }
     end
 
-    def post
+    def after
       options_at(:after)
     end
 
