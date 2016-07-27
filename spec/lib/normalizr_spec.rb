@@ -119,5 +119,24 @@ describe Normalizr do
         end
       end
     end
+    context 'normalizers are an array' do
+      let(:normalizers) { [[:strip, { truncate: { length: 8, omission: '...' }}, proc { |v| v.first(6) }]] }
+
+      context 'string' do
+        let(:value) { ' Lorem ipsum dolor sit amet' }
+
+        it 'strips, truncates and then slices the value' do
+          expect(subject).to eq('Lorem.')
+        end
+      end
+
+      context 'array' do
+        let(:value) { [' Lorem ipsum dolor sit amet', '    One more sentence'] }
+
+        it 'strips, truncates and then slices the value' do
+          expect(subject).to eq(['Lorem.', 'One m.'])
+        end
+      end
+    end
   end
 end
