@@ -38,6 +38,7 @@ module Normalizr
   end
 
   def normalize(obj, *normalizers)
+    normalizers.flatten!
     normalizers = configuration.default_normalizers if normalizers.empty?
     normalizers.each do |name|
       name, options = name.first if Hash === name
