@@ -1,4 +1,4 @@
-require 'support/codeclimate'
+require 'simplecov'
 require 'pry'
 require 'rspec'
 require 'rspec/its'

@@ -16,6 +16,14 @@ module Normalizr
       options_at(:after)
     end
 
+    def positive_condition
+      options_at(:if)
+    end
+
+    def negative_condition
+      options_at(:unless)
+    end
+
     private
 
     def options_at(*keys)

@@ -38,5 +38,7 @@ ActiveRecord::Schema.define do
   create_table :users, force: true do |t|
     t.string :firstname
     t.string :lastname
+    t.string :maidenname
+    t.string :favouritebook
   end
 end
