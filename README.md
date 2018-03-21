@@ -74,7 +74,7 @@ Normalizr.configure do
   add :indent do |value, amount = 2|
     if String === value
       value.indent(amount)
-    end
+    else
       value
     end
   end
@@ -128,6 +128,21 @@ sms.phone
 #=> "18105550000"
 sms.message
 #=> "It works"
+```
+
+You can also use if/unless options (they accept a symbol (method name) or proc):
+
+```ruby
+class Book
+  include Normalizr::Concerns
+
+  attr_accessor :author, :description, :date
+
+  normalize :author, if: :author_should_be_normalized?
+  normalize :description, unless: :description_should_not_be_normalized?
+  
+  normalize :author, if: proc { date.today? }
+end
 ```
 
 Normalize values outside of class:
