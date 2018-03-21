@@ -1,3 +1,7 @@
+### 0.3.0 / 2018-03-21
+
+* Add a possibility to use if/unless cases for normalizer options (@TheTharin)
+
 ### 0.2.0 / 2016-03-17
 
 * Introduce arrays normalization
