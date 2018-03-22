@@ -1,3 +1,7 @@
+### 0.3.1 / 2018-03-22
+
+* Fix conditional normalization
+
 ### 0.3.0 / 2018-03-21
 
 * Add a possibility to use if/unless cases for normalizer options (@TheTharin)
