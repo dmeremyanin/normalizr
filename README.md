@@ -140,8 +140,8 @@ class Book
 
   normalize :author, if: :author_should_be_normalized?
   normalize :description, unless: :description_should_not_be_normalized?
-  
-  normalize :author, if: proc { date.today? }
+
+  normalize :author, if: -> { date.today? }
 end
 ```
 

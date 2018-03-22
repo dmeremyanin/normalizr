@@ -11,8 +11,10 @@ module Normalizr
         prepend Module.new {
           options.attributes.each do |method|
             define_method :"#{method}=" do |value|
-              positive = options.positive_condition.all?  { |condition| instance_eval(&condition) }
-              negative = options.negative_condition.none? { |condition| instance_eval(&condition) }
+              condition_lambda = -> condition { Proc === condition ? instance_exec(&condition) : send(condition) }
+
+              positive = options.positive_condition.all?  &condition_lambda
+              negative = options.negative_condition.none? &condition_lambda
 
               if positive && negative
                 value = Normalizr.normalize(value, *options.before)

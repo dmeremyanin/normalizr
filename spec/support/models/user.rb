@@ -3,7 +3,9 @@ class User < Person
 
   normalize :lastname, if: :should_normalize_lastname?
   normalize :maidenname, if: :should_normalize_maidenname_positive?, unless: :should_normalize_maidenname_negative?
-  normalize :favouritebook, if: proc { true }
+  normalize :favouritebook, if: -> { true }
+
+  private
 
   def should_normalize_lastname?
     true
