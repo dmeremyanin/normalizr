@@ -16,7 +16,7 @@ module Normalizr
   end
 
   def configure
-    configuration.instance_eval &Proc.new
+    configuration.instance_eval(&Proc.new)
   end
 
   def find(name)
