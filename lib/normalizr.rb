@@ -15,8 +15,12 @@ module Normalizr
     @configuration ||= Configuration.new
   end
 
-  def configure
-    configuration.instance_eval &Proc.new
+  def configure(&block)
+    unless block_given?
+      raise ArgumentError, '.configure must be called with a block'
+    end
+
+    configuration.instance_eval &block
   end
 
   def find(name)

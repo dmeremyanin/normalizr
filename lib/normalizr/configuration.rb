@@ -14,8 +14,12 @@ module Normalizr
       self.default_normalizers = normalizers
     end
 
-    def add(name)
-      normalizers[name] = Proc.new
+    def add(name, &block)
+      unless block_given?
+        raise ArgumentError, '#add must be called with a block'
+      end
+
+      normalizers[name] = block
     end
   end
 end
