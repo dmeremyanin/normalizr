@@ -1,3 +1,7 @@
+### 0.4.0 / 2020-01-20
+
+* Support Ruby 2.7 (@badlamer)
+
 ### 0.3.1 / 2018-03-22
 
 * Fix conditional normalization
