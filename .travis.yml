@@ -9,7 +9,8 @@ gemfile:
   - gemfiles/activerecord-6.0.x.gemfile
 addons:
   code_climate:
-    repo_token: 1cac54041089115a5bf218169b62c76c8b87a5896f5aa973f89637a8553c0376
+    repo_token:
+      secure: Dn+nXUOFHTRUhYqYM1NYSxYSyoDhFaB2EHvlhBJ/FK3QxCy4a0beSLhs+YnDl8kI1DOrZQMl7HDrh9AHlfYvu5fX4zADD5g7JkTA2mIx1Rk3yazAUuy1j1ftX/UaowzoUAR5t0qwYm344Nnqoh+O1FujvWbiGVuZvWa6vfjFbXA=
 matrix:
   fast_finish: true
 before_install:
