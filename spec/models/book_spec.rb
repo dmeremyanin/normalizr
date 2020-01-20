@@ -25,7 +25,7 @@ describe Book do
     before do
       @book = Book.create!(title: 'Original Title')
       @book2 = Book.find(@book.id)
-      @book2.update_attributes(title: 'New Title')
+      @book2.update(title: 'New Title')
     end
 
     it "should reflect the change when the record is reloaded" do

@@ -5,17 +5,27 @@ describe Normalizr::Configuration do
   subject { configuration }
 
   describe '#default' do
-    before { configuration.default(:blank) }
-    its(:default_normalizers) { should == [:blank] }
+    it 'accpets default normalizers' do
+      subject.default(:blank)
+      expect(subject.default_normalizers).to eq([:blank])
+    end
   end
 
   describe '#normalizer_names' do
-    before { allow(configuration).to receive(:normalizers) {{ blank: proc {}}}}
-    its(:normalizer_names) { should == [:blank] }
+    it 'returns normalized names' do
+      allow(subject).to receive(:normalizers) {{ blank: proc {}}}
+      expect(subject.normalizer_names).to eq([:blank])
+    end
   end
 
   describe '#add' do
-    before { configuration.add(:blank) {}}
-    its(:normalizer_names) { should include(:blank) }
+    it 'requires block' do
+      expect { subject.add(:blank) }.to raise_error(ArgumentError)
+    end
+
+    it 'accepts block' do
+      subject.add(:blank) {}
+      expect(subject.normalizer_names).to include(:blank)
+    end
   end
 end
