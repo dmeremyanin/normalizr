@@ -20,7 +20,7 @@ module Normalizr
       raise ArgumentError, '.configure must be called with a block'
     end
 
-    configuration.instance_eval &block
+    configuration.instance_eval(&block)
   end
 
   def find(name)
