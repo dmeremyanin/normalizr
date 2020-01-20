@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['deemox@gmail.com']
   spec.description   = 'Writer methods parameters normalization'
   spec.summary       = 'Writer methods parameters normalization'
-  spec.homepage      = 'https://github.com/dimko/normalizr'
+  spec.homepage      = 'https://github.com/dmeremyanin/normalizr'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files`.split($/)

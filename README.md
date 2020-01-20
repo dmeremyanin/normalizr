@@ -1,9 +1,9 @@
 ## Normalizr
 
 [![Gem Version](https://badge.fury.io/rb/normalizr.svg)](https://badge.fury.io/rb/normalizr)
-[![Build Status](https://travis-ci.org/dimko/normalizr.svg?branch=master)](https://travis-ci.org/dimko/normalizr)
-[![Code Climate](https://codeclimate.com/github/dimko/normalizr/badges/gpa.svg)](https://codeclimate.com/github/dimko/normalizr)
-[![Test Coverage](https://codeclimate.com/github/dimko/normalizr/badges/coverage.svg)](https://codeclimate.com/github/dimko/normalizr/coverage)
+[![Build Status](https://travis-ci.org/dmeremyanin/normalizr.svg?branch=master)](https://travis-ci.org/dmeremyanin/normalizr)
+[![Code Climate](https://codeclimate.com/github/dmeremyanin/normalizr/badges/gpa.svg)](https://codeclimate.com/github/dmeremyanin/normalizr)
+[![Test Coverage](https://codeclimate.com/github/dmeremyanin/normalizr/badges/coverage.svg)](https://codeclimate.com/github/dmeremyanin/normalizr/coverage)
 
 The [attribute_normalizer](https://github.com/mdeering/attribute_normalizer) replacement.
 
