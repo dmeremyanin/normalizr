@@ -119,5 +119,14 @@ describe Normalizr do
         end
       end
     end
+
+    context 'normalizers are default and custom' do
+      let(:normalizers) { [:default, { truncate: { length: 8, omission: '...' }}, proc { |v| v.first(6) }] }
+      let(:value) { ' Lorem ipsum dolor sit amet' }
+
+      it 'uses the default normalizers, then truncates and slices the value' do
+        expect(subject).to eq('Lorem.')
+      end
+    end
   end
 end

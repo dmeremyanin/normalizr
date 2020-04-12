@@ -88,6 +88,9 @@ class User < ActiveRecord::Base
   normalize :first_name, :last_name, :about # with default normalizers
   normalize :email, with: :downcase
 
+  # you can use default and custom normalizers together
+  normalize :middle_name, with: [:default, :titleize]
+
   # supports `normalize_attribute` and `normalize_attributes` as well
   normalize_attribute :skype
 
@@ -95,13 +98,15 @@ class User < ActiveRecord::Base
   normalize :skills
 end
 
-user = User.new(first_name: '', last_name: '', skills: [nil, '', ' ruby'])
+user = User.new(first_name: '', last_name: '', middle_name: 'elizabeth ', skills: [nil, '', ' ruby'])
 user.email = "ADDRESS@example.com"
 
 user.first_name
 #=> nil
 user.last_name
 #=> nil
+user.middle_name
+#=> "Elizabeth"
 user.email
 #=> "address@example.com"
 user.skills
