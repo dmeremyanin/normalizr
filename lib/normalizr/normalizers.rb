@@ -48,6 +48,10 @@ Normalizr.configure do
     end
   end
 
+  add :default do |value|
+    Normalizr.normalize(value)
+  end
+
   [:capitalize, :downcase, :parameterize, :strip, :upcase].each do |name|
     next unless String.method_defined?(name)
 
