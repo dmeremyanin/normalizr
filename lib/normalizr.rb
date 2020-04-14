@@ -42,12 +42,21 @@ module Normalizr
   end
 
   def normalize(obj, *normalizers)
-    normalizers = configuration.default_normalizers if normalizers.empty?
-    normalizers.each do |name|
+    normalizers_with_default(normalizers).reduce(obj) do |memo, name|
       name, options = name.first if Hash === name
-      obj = process(obj, name, options)
+
+      process(memo, name, options)
     end
-    obj
+  end
+
+  private
+
+  def normalizers_with_default(normalizers)
+    default_index = normalizers.index(:default)
+
+    normalizers[default_index.to_i] = configuration.default_normalizers if normalizers.empty? || default_index
+    normalizers.flatten!
+    normalizers
   end
 end
 
