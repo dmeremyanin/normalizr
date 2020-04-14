@@ -124,8 +124,20 @@ describe Normalizr do
       let(:normalizers) { [:default, { truncate: { length: 8, omission: '...' }}, proc { |v| v.first(6) }] }
       let(:value) { ' Lorem ipsum dolor sit amet' }
 
-      it 'uses the default normalizers, then truncates and slices the value' do
-        expect(subject).to eq('Lorem.')
+      context 'string' do
+        let(:value) { ' Lorem ipsum dolor sit amet' }
+
+        it 'uses the default normalizers, then truncates and slices the value' do
+          expect(subject).to eq('Lorem.')
+        end
+      end
+
+      context 'array' do
+        let(:value) { [' Lorem ipsum dolor sit amet', '    One more sentence', ''] }
+
+        it 'strips, truncates and then slices the value' do
+          expect(subject).to eq(['Lorem.', 'One m.'])
+        end
       end
     end
   end
