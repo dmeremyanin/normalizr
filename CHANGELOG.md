@@ -1,3 +1,7 @@
+### 0.5.0 / 2020-07-27
+
+* Add ability to use default and custom normalizers together (@subbbotin)
+
 ### 0.4.0 / 2020-01-20
 
 * Support Ruby 2.7 (@badlamer)
