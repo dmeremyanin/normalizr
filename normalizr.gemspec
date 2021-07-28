@@ -5,7 +5,7 @@ require 'normalizr/version'
 Gem::Specification.new do |spec|
   spec.name          = 'normalizr'
   spec.version       = Normalizr::VERSION
-  spec.authors       = ['Dimko']
+  spec.authors       = ['Dmitriy Meremyanin']
   spec.email         = ['deemox@gmail.com']
   spec.description   = 'Writer methods parameters normalization'
   spec.summary       = 'Writer methods parameters normalization'

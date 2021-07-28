@@ -1,3 +1,8 @@
+### 0.6.0 / 2021-07-29
+
+* Use on_load hook for integration with ActiveRecord (@sikachu)
+* Use update instead of update_attributes (@sikachu)
+
 ### 0.5.0 / 2020-07-27
 
 * Add ability to use default and custom normalizers together (@subbbotin)
