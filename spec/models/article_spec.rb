@@ -21,7 +21,7 @@ describe Article do
     before do
       @article = Article.create!(title: 'Original Title')
       @article2 = Article.find(@article.id)
-      @article2.update_attributes(title: 'New Title')
+      @article2.update(title: 'New Title')
     end
 
     it "should reflect the change when the record is reloaded" do
