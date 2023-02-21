@@ -20,7 +20,8 @@ module Normalizr
                 value = Normalizr.normalize(value, *options.before)
                 value = Normalizr.normalize(value, *options.after) if options.after.any?
               end
-              super(value,*method_args)
+
+              super(value, *method_args)
             end
           end
         }
