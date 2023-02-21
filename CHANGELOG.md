@@ -1,3 +1,8 @@
+### 0.6.1 / 2023-02-21
+
+* Support pass through multiple arguments in assignment operator (@cbillen)
+* Move to Github Actions
+
 ### 0.6.0 / 2021-07-29
 
 * Use on_load hook for integration with ActiveRecord (@sikachu)
