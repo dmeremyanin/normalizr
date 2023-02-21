@@ -14,6 +14,7 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
+      fail-fast: false
       matrix:
         ruby-version:
           - '2.7'
@@ -25,6 +26,19 @@ jobs:
           - activerecord-6.0.x
           - activerecord-6.1.x
           - activerecord-7.0.x
+        exclude:
+          - ruby-version: '3.0'
+            gemfile: activerecord-5.2.x
+          - ruby-version: '3.1'
+            gemfile: activerecord-5.2.x
+          - ruby-version: '3.2'
+            gemfile: activerecord-5.2.x
+          - ruby-version: '3.0'
+            gemfile: activerecord-6.0.x
+          - ruby-version: '3.1'
+            gemfile: activerecord-6.0.x
+          - ruby-version: '3.2'
+            gemfile: activerecord-6.0.x
 
     env:
       BUNDLE_GEMFILE: ${{ github.workspace }}/gemfiles/${{ matrix.gemfile }}.gemfile
