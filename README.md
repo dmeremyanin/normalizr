@@ -1,7 +1,7 @@
 ## Normalizr
 
 [![Gem Version](https://badge.fury.io/rb/normalizr.svg)](https://badge.fury.io/rb/normalizr)
-[![Build Status](https://travis-ci.org/dmeremyanin/normalizr.svg?branch=master)](https://travis-ci.org/dmeremyanin/normalizr)
+[![Build Status](https://github.com/dmeremyanin/normalizr/actions/workflows/rspec.yml/badge.svg?branch=main)](https://github.com/dmeremyanin/normalizr/actions/workflows/rspec.yml)
 [![Code Climate](https://codeclimate.com/github/dmeremyanin/normalizr/badges/gpa.svg)](https://codeclimate.com/github/dmeremyanin/normalizr)
 [![Test Coverage](https://codeclimate.com/github/dmeremyanin/normalizr/badges/coverage.svg)](https://codeclimate.com/github/dmeremyanin/normalizr/coverage)
 
