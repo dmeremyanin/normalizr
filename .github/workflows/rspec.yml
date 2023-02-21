@@ -1,0 +1,43 @@
+---
+name: RSpec
+
+on:
+  push:
+    branches:
+      - $default-branch
+  pull_request:
+    branches:
+      - $default-branch
+
+jobs:
+  rspec:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        ruby-version:
+          - '2.7'
+          - '3.0'
+          - '3.1'
+          - '3.2'
+        gemfile:
+          - activerecord-5.2.x
+          - activerecord-6.0.x
+          - activerecord-6.1.x
+          - activerecord-7.0.x
+
+    env:
+      BUNDLE_GEMFILE: ${{ github.workspace }}/gemfiles/${{ matrix.gemfile }}.gemfile
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby-version }}
+          bundler-cache: true
+
+      - name: Run RSpec
+        run: bundle exec rake
