@@ -10,7 +10,7 @@ module Normalizr
 
         prepend Module.new {
           options.attributes.each do |method|
-            define_method :"#{method}=" do |value|
+            define_method :"#{method}=" do |value, *method_args|
               condition_lambda = -> condition { Proc === condition ? instance_exec(&condition) : send(condition) }
 
               positive = options.positive_condition.all?(&condition_lambda)
@@ -20,8 +20,7 @@ module Normalizr
                 value = Normalizr.normalize(value, *options.before)
                 value = Normalizr.normalize(value, *options.after) if options.after.any?
               end
-
-              super(value)
+              super(value,*method_args)
             end
           end
         }
